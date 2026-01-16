@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 
 function App() {
-  const [count, setCount ] = useState(0);
+  const [inputValue, setInputValue] = useState('');
 
   return (
     <div>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>증가</button>
+      <input type="text" value={inputValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)} />
+      <p>입력된 값: [{inputValue}]</p>
     </div>
   )
 }
