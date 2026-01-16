@@ -1,37 +1,12 @@
-import './App.css'
-import UserInfo from './UserInfo'
-
-interface UserInfoProps {
-  id: number;
-  name: string;
-  age: number;
-};
+import React, { useState } from "react"
 
 function App() {
-
-  const users = [
-    {
-      id: 1,
-      name: "John1",
-      age: 31
-    },
-    {
-      id: 2,
-      name: "John2",
-      age: 32
-    },
-    {
-      id: 3,
-      name: "John3",
-      age: 33
-    },
-  ]
+  const [count, setCount ] = useState(0);
 
   return (
     <div>
-      {users.map(user => (
-        <UserInfo key={user.id} user={user} />
-      ))}
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>증가</button>
     </div>
   )
 }
