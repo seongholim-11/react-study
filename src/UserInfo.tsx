@@ -1,5 +1,6 @@
 interface UserInfoProps {
     user: {
+        id: number;
         name: string;
         age: number;
     }

@@ -1,15 +1,38 @@
 import './App.css'
 import UserInfo from './UserInfo'
 
+interface UserInfoProps {
+  id: number;
+  name: string;
+  age: number;
+};
+
 function App() {
 
-  const user = {
-    name: "John",
-    age: 30
-  }
+  const users = [
+    {
+      id: 1,
+      name: "John1",
+      age: 31
+    },
+    {
+      id: 2,
+      name: "John2",
+      age: 32
+    },
+    {
+      id: 3,
+      name: "John3",
+      age: 33
+    },
+  ]
 
   return (
-    <UserInfo user={user} />
+    <div>
+      {users.map(user => (
+        <UserInfo key={user.id} user={user} />
+      ))}
+    </div>
   )
 }
 
