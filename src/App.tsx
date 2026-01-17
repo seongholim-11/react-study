@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Todo 항목의 타입을 정의합니다.
 interface Todo {
@@ -21,6 +21,12 @@ function App() {
   function handleDeleteTodo(id: number) {
     setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
   }
+
+  useEffect(() => {
+    // 실행하고 싶은 부수 효과 코드
+    document.title = `할 일: ${todos.length}개`;
+  
+  }, [todos]);
 
   return (
     <div>
